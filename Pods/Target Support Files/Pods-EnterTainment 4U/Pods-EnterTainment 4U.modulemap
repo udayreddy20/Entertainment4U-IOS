@@ -1,0 +1,6 @@
+framework module Pods_EnterTainment_4U {
+  umbrella header "Pods-EnterTainment 4U-umbrella.h"
+
+  export *
+  module * { export * }
+}
