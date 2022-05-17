@@ -8,6 +8,12 @@
 
 /* Begin PBXBuildFile section */
 		2089C348E2F4A0C24B00731E /* Pods_EnterTainment_4U.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B2FBE6F3F9A597E83B428E7B /* Pods_EnterTainment_4U.framework */; };
+		DB1D9F5D2830206C006CC20B /* AdminVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = DB1D9F5C2830206C006CC20B /* AdminVC.swift */; };
+		DB1D9F5F2830211D006CC20B /* AdminNav.swift in Sources */ = {isa = PBXBuildFile; fileRef = DB1D9F5E2830211D006CC20B /* AdminNav.swift */; };
+		DB1D9F612830E1CE006CC20B /* GerneListVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = DB1D9F602830E1CE006CC20B /* GerneListVC.swift */; };
+		DB4E3AD4282AC8260061C952 /* SocialLogins.swift in Sources */ = {isa = PBXBuildFile; fileRef = DB4E3AD3282AC8260061C952 /* SocialLogins.swift */; };
+		DB4E3AD6282ADA600061C952 /* AddMovieVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = DB4E3AD5282ADA600061C952 /* AddMovieVC.swift */; };
+		DB4E3AD8282AE05F0061C952 /* MovieModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = DB4E3AD7282AE05F0061C952 /* MovieModel.swift */; };
 		DB54D9EC28184BC600364F78 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = DB54D9EB28184BC600364F78 /* AppDelegate.swift */; };
 		DB54D9EE28184BC600364F78 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = DB54D9ED28184BC600364F78 /* SceneDelegate.swift */; };
 		DB54D9F028184BC600364F78 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DB54D9EF28184BC600364F78 /* ViewController.swift */; };
@@ -43,12 +49,30 @@
 		DB760B302818821F0094DC89 /* MovieListVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = DB760B2F2818821F0094DC89 /* MovieListVC.swift */; };
 		DB760B322818901A0094DC89 /* CheckDatesVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = DB760B312818901A0094DC89 /* CheckDatesVC.swift */; };
 		DB760B3428189EE50094DC89 /* PaymentVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = DB760B3328189EE50094DC89 /* PaymentVC.swift */; };
+		DB825AF3282AAD26007F3586 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = DB825AF2282AAD26007F3586 /* GoogleService-Info.plist */; };
+		DB825AF5282AB399007F3586 /* GFunction.swift in Sources */ = {isa = PBXBuildFile; fileRef = DB825AF4282AB399007F3586 /* GFunction.swift */; };
+		DB825AFB282AB3B3007F3586 /* TrendingModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = DB825AF7282AB3B3007F3586 /* TrendingModel.swift */; };
+		DB825AFC282AB3B3007F3586 /* CardModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = DB825AF8282AB3B3007F3586 /* CardModel.swift */; };
+		DB825AFD282AB3B3007F3586 /* UserModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = DB825AF9282AB3B3007F3586 /* UserModel.swift */; };
+		DB825AFE282AB3B3007F3586 /* GerneModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = DB825AFA282AB3B3007F3586 /* GerneModel.swift */; };
+		DBC927BA2830FA4E00520F4E /* AdminMovieListVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = DBC927B92830FA4E00520F4E /* AdminMovieListVC.swift */; };
+		DBC927BC2831015600520F4E /* AdminTheaterListVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = DBC927BB2831015600520F4E /* AdminTheaterListVC.swift */; };
+		DBCF235A282C27F0006E4740 /* AddGerneVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = DBCF2359282C27EF006E4740 /* AddGerneVC.swift */; };
+		DBCF235C282C288C006E4740 /* AddTheaterVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = DBCF235B282C288C006E4740 /* AddTheaterVC.swift */; };
+		DBCF235E282C2DD1006E4740 /* TheaterModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = DBCF235D282C2DD1006E4740 /* TheaterModel.swift */; };
+		DBCF2360282C3E1E006E4740 /* OrderModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = DBCF235F282C3E1E006E4740 /* OrderModel.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
 		4F8D70B8E69BCD0F0E4F4B68 /* Pods-EnterTainment 4U.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-EnterTainment 4U.debug.xcconfig"; path = "Target Support Files/Pods-EnterTainment 4U/Pods-EnterTainment 4U.debug.xcconfig"; sourceTree = "<group>"; };
 		B2FBE6F3F9A597E83B428E7B /* Pods_EnterTainment_4U.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_EnterTainment_4U.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		BBA1238D0762E5E14BFF994F /* Pods-EnterTainment 4U.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-EnterTainment 4U.release.xcconfig"; path = "Target Support Files/Pods-EnterTainment 4U/Pods-EnterTainment 4U.release.xcconfig"; sourceTree = "<group>"; };
+		DB1D9F5C2830206C006CC20B /* AdminVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AdminVC.swift; sourceTree = "<group>"; };
+		DB1D9F5E2830211D006CC20B /* AdminNav.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AdminNav.swift; sourceTree = "<group>"; };
+		DB1D9F602830E1CE006CC20B /* GerneListVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GerneListVC.swift; sourceTree = "<group>"; };
+		DB4E3AD3282AC8260061C952 /* SocialLogins.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SocialLogins.swift; sourceTree = "<group>"; };
+		DB4E3AD5282ADA600061C952 /* AddMovieVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddMovieVC.swift; sourceTree = "<group>"; };
+		DB4E3AD7282AE05F0061C952 /* MovieModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MovieModel.swift; sourceTree = "<group>"; };
 		DB54D9E828184BC600364F78 /* EnterTainment 4U.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "EnterTainment 4U.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		DB54D9EB28184BC600364F78 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		DB54D9ED28184BC600364F78 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -78,6 +102,7 @@
 		DB5884E72819CA4E00FBC4DB /* BookingVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BookingVC.swift; sourceTree = "<group>"; };
 		DB5884E92819CFD200FBC4DB /* ProfileVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileVC.swift; sourceTree = "<group>"; };
 		DB5884EB2819D41800FBC4DB /* TheaterList.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TheaterList.swift; sourceTree = "<group>"; };
+		DB69C524282C51B000D4AD8B /* EnterTainment 4U.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = "EnterTainment 4U.entitlements"; sourceTree = "<group>"; };
 		DB760B242818636E0094DC89 /* StartVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StartVC.swift; sourceTree = "<group>"; };
 		DB760B26281864DC0094DC89 /* LoginVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginVC.swift; sourceTree = "<group>"; };
 		DB760B28281864E70094DC89 /* SignUpVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignUpVC.swift; sourceTree = "<group>"; };
@@ -86,6 +111,18 @@
 		DB760B2F2818821F0094DC89 /* MovieListVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MovieListVC.swift; sourceTree = "<group>"; };
 		DB760B312818901A0094DC89 /* CheckDatesVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CheckDatesVC.swift; sourceTree = "<group>"; };
 		DB760B3328189EE50094DC89 /* PaymentVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PaymentVC.swift; sourceTree = "<group>"; };
+		DB825AF2282AAD26007F3586 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
+		DB825AF4282AB399007F3586 /* GFunction.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GFunction.swift; sourceTree = "<group>"; };
+		DB825AF7282AB3B3007F3586 /* TrendingModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TrendingModel.swift; sourceTree = "<group>"; };
+		DB825AF8282AB3B3007F3586 /* CardModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CardModel.swift; sourceTree = "<group>"; };
+		DB825AF9282AB3B3007F3586 /* UserModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UserModel.swift; sourceTree = "<group>"; };
+		DB825AFA282AB3B3007F3586 /* GerneModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GerneModel.swift; sourceTree = "<group>"; };
+		DBC927B92830FA4E00520F4E /* AdminMovieListVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AdminMovieListVC.swift; sourceTree = "<group>"; };
+		DBC927BB2831015600520F4E /* AdminTheaterListVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AdminTheaterListVC.swift; sourceTree = "<group>"; };
+		DBCF2359282C27EF006E4740 /* AddGerneVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddGerneVC.swift; sourceTree = "<group>"; };
+		DBCF235B282C288C006E4740 /* AddTheaterVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddTheaterVC.swift; sourceTree = "<group>"; };
+		DBCF235D282C2DD1006E4740 /* TheaterModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TheaterModel.swift; sourceTree = "<group>"; };
+		DBCF235F282C3E1E006E4740 /* OrderModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OrderModel.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -129,6 +166,9 @@
 		DB54D9EA28184BC600364F78 /* EnterTainment 4U */ = {
 			isa = PBXGroup;
 			children = (
+				DB69C524282C51B000D4AD8B /* EnterTainment 4U.entitlements */,
+				DB825AF6282AB3B3007F3586 /* Model */,
+				DB825AF2282AAD26007F3586 /* GoogleService-Info.plist */,
 				DB760B2A281868000094DC89 /* NavigationControllers */,
 				DB760B232818633C0094DC89 /* ViewControllers */,
 				DB54D9FF28184BE100364F78 /* Extensions */,
@@ -146,6 +186,8 @@
 		DB54D9FF28184BE100364F78 /* Extensions */ = {
 			isa = PBXGroup;
 			children = (
+				DB4E3AD3282AC8260061C952 /* SocialLogins.swift */,
+				DB825AF4282AB399007F3586 /* GFunction.swift */,
 				DB54DA0028184BE100364F78 /* UIApplication+Extension.swift */,
 				DB54DA0128184BE100364F78 /* UIImageView+Extensions.swift */,
 				DB54DA0228184BE100364F78 /* UIViewController+Extensions.swift */,
@@ -180,6 +222,13 @@
 				DB5884E72819CA4E00FBC4DB /* BookingVC.swift */,
 				DB5884E92819CFD200FBC4DB /* ProfileVC.swift */,
 				DB5884EB2819D41800FBC4DB /* TheaterList.swift */,
+				DB4E3AD5282ADA600061C952 /* AddMovieVC.swift */,
+				DBCF2359282C27EF006E4740 /* AddGerneVC.swift */,
+				DBCF235B282C288C006E4740 /* AddTheaterVC.swift */,
+				DB1D9F5C2830206C006CC20B /* AdminVC.swift */,
+				DB1D9F602830E1CE006CC20B /* GerneListVC.swift */,
+				DBC927B92830FA4E00520F4E /* AdminMovieListVC.swift */,
+				DBC927BB2831015600520F4E /* AdminTheaterListVC.swift */,
 			);
 			path = ViewControllers;
 			sourceTree = "<group>";
@@ -189,8 +238,23 @@
 			children = (
 				DB760B2B2818682A0094DC89 /* AuthNav.swift */,
 				DB5884E32819BB5700FBC4DB /* HomeNav.swift */,
+				DB1D9F5E2830211D006CC20B /* AdminNav.swift */,
 			);
 			path = NavigationControllers;
+			sourceTree = "<group>";
+		};
+		DB825AF6282AB3B3007F3586 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				DB825AF7282AB3B3007F3586 /* TrendingModel.swift */,
+				DB825AF8282AB3B3007F3586 /* CardModel.swift */,
+				DB825AF9282AB3B3007F3586 /* UserModel.swift */,
+				DB825AFA282AB3B3007F3586 /* GerneModel.swift */,
+				DB4E3AD7282AE05F0061C952 /* MovieModel.swift */,
+				DBCF235D282C2DD1006E4740 /* TheaterModel.swift */,
+				DBCF235F282C3E1E006E4740 /* OrderModel.swift */,
+			);
+			path = Model;
 			sourceTree = "<group>";
 		};
 		F0493EE9A2521530C21144EE /* Pods */ = {
@@ -214,6 +278,7 @@
 				DB54D9E528184BC600364F78 /* Frameworks */,
 				DB54D9E628184BC600364F78 /* Resources */,
 				8D8A5908ADC0E23E0B3D8339 /* [CP] Embed Pods Frameworks */,
+				FF5904B097709E6B33660F94 /* [CP] Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -263,6 +328,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				DB54D9F828184BC800364F78 /* LaunchScreen.storyboard in Resources */,
+				DB825AF3282AAD26007F3586 /* GoogleService-Info.plist in Resources */,
 				DB54D9F528184BC800364F78 /* Assets.xcassets in Resources */,
 				DB54D9F328184BC600364F78 /* Main.storyboard in Resources */,
 			);
@@ -310,6 +376,23 @@
 			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-EnterTainment 4U/Pods-EnterTainment 4U-frameworks.sh\"\n";
 			showEnvVarsInLog = 0;
 		};
+		FF5904B097709E6B33660F94 /* [CP] Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-EnterTainment 4U/Pods-EnterTainment 4U-resources-${CONFIGURATION}-input-files.xcfilelist",
+			);
+			name = "[CP] Copy Pods Resources";
+			outputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-EnterTainment 4U/Pods-EnterTainment 4U-resources-${CONFIGURATION}-output-files.xcfilelist",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-EnterTainment 4U/Pods-EnterTainment 4U-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
 /* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
@@ -317,37 +400,54 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				DB4E3AD4282AC8260061C952 /* SocialLogins.swift in Sources */,
 				DB5884E82819CA4E00FBC4DB /* BookingVC.swift in Sources */,
 				DB54DA1728184BE100364F78 /* UIStoryBoard+Extension.swift in Sources */,
 				DB54DA1028184BE100364F78 /* UIColor+Extension.swift in Sources */,
 				DB54DA1928184BE100364F78 /* StringFile.swift in Sources */,
+				DB1D9F612830E1CE006CC20B /* GerneListVC.swift in Sources */,
 				DB760B27281864DC0094DC89 /* LoginVC.swift in Sources */,
 				DB54DA0E28184BE100364F78 /* UIImageView+Extensions.swift in Sources */,
+				DB825AFE282AB3B3007F3586 /* GerneModel.swift in Sources */,
 				DB54DA1328184BE100364F78 /* UILabel+Extension.swift in Sources */,
 				DB760B302818821F0094DC89 /* MovieListVC.swift in Sources */,
 				DB54D9F028184BC600364F78 /* ViewController.swift in Sources */,
+				DB1D9F5F2830211D006CC20B /* AdminNav.swift in Sources */,
 				DB760B3428189EE50094DC89 /* PaymentVC.swift in Sources */,
+				DB4E3AD8282AE05F0061C952 /* MovieModel.swift in Sources */,
 				DB54D9EC28184BC600364F78 /* AppDelegate.swift in Sources */,
 				DB760B29281864E70094DC89 /* SignUpVC.swift in Sources */,
 				DB760B2E28186E300094DC89 /* HomeVC.swift in Sources */,
+				DBCF235C282C288C006E4740 /* AddTheaterVC.swift in Sources */,
 				DB54DA1828184BE100364F78 /* UICollectionView+Extension.swift in Sources */,
 				DB54DA0D28184BE100364F78 /* UIApplication+Extension.swift in Sources */,
 				DB760B322818901A0094DC89 /* CheckDatesVC.swift in Sources */,
+				DBCF2360282C3E1E006E4740 /* OrderModel.swift in Sources */,
 				DB760B2C2818682A0094DC89 /* AuthNav.swift in Sources */,
 				DB54DA1628184BE100364F78 /* String+Extension.swift in Sources */,
 				DB5884E22819BB1900FBC4DB /* SuccessMessageVC.swift in Sources */,
 				DB5884E02819AC1B00FBC4DB /* AddNewCardVC.swift in Sources */,
+				DB1D9F5D2830206C006CC20B /* AdminVC.swift in Sources */,
 				DB54DA1428184BE100364F78 /* UserDefault+Extension.swift in Sources */,
+				DB825AFB282AB3B3007F3586 /* TrendingModel.swift in Sources */,
+				DB825AF5282AB399007F3586 /* GFunction.swift in Sources */,
+				DBC927BC2831015600520F4E /* AdminTheaterListVC.swift in Sources */,
+				DBC927BA2830FA4E00520F4E /* AdminMovieListVC.swift in Sources */,
 				DB5884EC2819D41800FBC4DB /* TheaterList.swift in Sources */,
+				DB825AFC282AB3B3007F3586 /* CardModel.swift in Sources */,
 				DB54DA1228184BE100364F78 /* UserDefault.swift in Sources */,
 				DB54DA1B2818558000364F78 /* GClass.swift in Sources */,
 				DB54DA0F28184BE100364F78 /* UIViewController+Extensions.swift in Sources */,
 				DB54DA1528184BE100364F78 /* UITapGesture+Extensions.swift in Sources */,
 				DB5884EA2819CFD200FBC4DB /* ProfileVC.swift in Sources */,
+				DBCF235A282C27F0006E4740 /* AddGerneVC.swift in Sources */,
+				DB4E3AD6282ADA600061C952 /* AddMovieVC.swift in Sources */,
 				DB54DA1128184BE100364F78 /* Alert.swift in Sources */,
 				DB54D9EE28184BC600364F78 /* SceneDelegate.swift in Sources */,
+				DBCF235E282C2DD1006E4740 /* TheaterModel.swift in Sources */,
 				DB5884E42819BB5700FBC4DB /* HomeNav.swift in Sources */,
 				DB760B252818636E0094DC89 /* StartVC.swift in Sources */,
+				DB825AFD282AB3B3007F3586 /* UserModel.swift in Sources */,
 				DB5884E62819BEF700FBC4DB /* FavouriteVC.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -496,6 +596,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_ENTITLEMENTS = "EnterTainment 4U/EnterTainment 4U.entitlements";
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				GENERATE_INFOPLIST_FILE = YES;
@@ -524,6 +625,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_ENTITLEMENTS = "EnterTainment 4U/EnterTainment 4U.entitlements";
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				GENERATE_INFOPLIST_FILE = YES;
