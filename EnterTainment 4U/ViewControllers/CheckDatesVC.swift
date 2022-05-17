@@ -8,6 +8,7 @@ import FSCalendar
 class CheckDatesVC: UIViewController {
 
     @IBOutlet weak var startDateCalendar: FSCalendar!
+    var movieData: MovieModel!
     
     func setUpView(){
         self.applyStyle()
@@ -25,9 +26,7 @@ class CheckDatesVC: UIViewController {
     func calendarSetup(){
         self.startDateCalendar.appearance.headerTitleColor = .black
         self.startDateCalendar.headerHeight = 45
-        
         self.startDateCalendar.appearance.titleTodayColor = .black
-        
         self.startDateCalendar.placeholderType = .none
     }
     
@@ -35,6 +34,8 @@ class CheckDatesVC: UIViewController {
     @IBAction func btnProccedTapped(_ sender: Any) {
         if let vc = UIStoryboard.main.instantiateViewController(withClass: TheaterListVC.self) {
 //            vc.data = self.data
+            vc.movieData = self.movieData
+            vc.selectedDate = self.startDateCalendar.selectedDate
             self.navigationController?.pushViewController(vc, animated: true)
         }
     }
