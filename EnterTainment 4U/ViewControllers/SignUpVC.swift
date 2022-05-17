@@ -18,6 +18,7 @@ class SignUpVC: UIViewController {
     
 
     var flag: Bool = true
+    var socialData: SocialLoginDataModel!
 
     func validation() -> String {
         if self.txtName.text?.trim() == "" {
@@ -59,6 +60,11 @@ class SignUpVC: UIViewController {
     func applyStyle(){
         self.lblWelcome.font = UIFont(name: "bold", size: 22.0)
         self.lblWelcome.textColor = UIColor.hexStringToUIColor(hex: "#9D9998")
+        if socialData != nil {
+            self.txtName.text = socialData.firstName
+            self.txtEmail.text = socialData.email
+            self.txtEmail.isUserInteractionEnabled = false
+        }
     }
     
     
@@ -66,7 +72,7 @@ class SignUpVC: UIViewController {
         self.flag = false
         let error = self.validation()
         if error == "" {
-            UIApplication.shared.setTab()
+            self.getExistingUser(email: self.txtEmail.text ?? "", phone: self.txtPhone.text ?? "", name: self.txtName.text ?? "", password: self.txtPassword.text ?? "",address: self.txtAddress.text ?? "")
         }else{
             Alert.shared.showAlert(message: error, completion: nil)
         }
@@ -80,3 +86,54 @@ class SignUpVC: UIViewController {
     }
 
 }
+
+//MARK:- Extension for Login Function
+extension SignUpVC {
+
+    func createAccount(email: String, phone:String, name:String, password:String,address: String) {
+        var ref : DocumentReference? = nil
+        ref = AppDelegate.shared.db.collection(eUser).addDocument(data:
+            [
+              ePhone: phone,
+              eEmail: email,
+              eName: name,
+              ePassword : password,
+              eAddress: address,
+            ])
+        {  err in
+            if let err = err {
+                print("Error adding document: \(err)")
+            } else {
+                print("Document added with ID: \(ref!.documentID)")
+                GFunction.shared.firebaseRegister(data: email)
+                
+                GFunction.user = UserModel(docId: (ref?.documentID.description)!, name: name, email: email, phone: phone, password: password, address: address)
+                
+                UIApplication.shared.setTab()
+                self.flag = true
+            }
+        }
+    }
+
+    func getExistingUser(email: String, phone:String, name:String, password:String,address:String) {
+
+        _ = AppDelegate.shared.db.collection(eUser).whereField(eEmail, isEqualTo: email).addSnapshotListener{ querySnapshot, error in
+
+            guard let snapshot = querySnapshot else {
+                print("Error fetching snapshots: \(error!)")
+                return
+            }
+
+            if snapshot.documents.count == 0 {
+                self.createAccount(email: email, phone:phone, name:name, password:password, address: address)
+                self.flag = true
+            }else{
+                if !self.flag {
+                    Alert.shared.showAlert(message: "Email is already exist !!!", completion: nil)
+                    self.flag = true
+                }
+            }
+        }
+    }
+}
+
