@@ -37,6 +37,10 @@ class AddNewCardVC: UIViewController {
     private var yearText : String = String()
     
     
+    var theaterData : TheaterModel!
+    var movieData: MovieModel!
+    var selectedDate: Date!
+    var selectedSeats: [IndexPath]!
     
     private func setUpView() {
         self.applyStyle()
@@ -64,6 +68,16 @@ class AddNewCardVC: UIViewController {
         
     }
     
+    func UTCToDate(date:Date) -> String {
+        let formatter = DateFormatter()
+        // initially set the format based on your datepicker date / server String
+        formatter.dateFormat = "yyyy-MM-dd HH:mm:ss"
+        let myString = formatter.string(from: date) // string purpose I add here
+        let yourDate = formatter.date(from: myString)  // convert your string to date
+        formatter.dateFormat = "dd, MMM, yyyy"  //then again set the date format whhich type of output you need
+        return formatter.string(from: yourDate!) // again convert your date to string
+    }
+    
     
     private func setPicker() {
         currentcalender = Calendar(identifier: .gregorian)
@@ -76,7 +90,6 @@ class AddNewCardVC: UIViewController {
         
         
         components = currentcalender.dateComponents(units, from: date)
-        //        arrayMonth = currentcalender.shortMonthSymbols//standaloneMonthSymbols
         arrayMonth = ["01","02","03","04","05","06","07","08","09","10","11","12"]
         
         for month in 0...24 {
@@ -95,8 +108,17 @@ class AddNewCardVC: UIViewController {
     @IBAction func btnSaveClick(_ sender: Any){
         let error = self.validation()
         if error == "" {
-            if let vc = UIStoryboard.main.instantiateViewController(withClass: SuccessMessageVC.self) {
-                self.navigationController?.pushViewController(vc, animated: true)
+            let value = arc4random_uniform(30 + 1)
+            let value1 = arc4random_uniform(9999 + 1)
+            
+            let df: DateFormatter = DateFormatter()
+            df.dateFormat = "yyyyMMddHHmm"
+            
+            let dateString: String = df.string(from: Date())
+            let bookingID = "\(dateString)\(value1)"
+            if let user = GFunction.user, let movieData = self.movieData, let selectedDate : String = self.UTCToDate(date: self.selectedDate) as? String, let theaterData = self.theaterData {
+                self.addCard(name: self.txtCardName.text ?? "", number: self.txtCardNumber.text ?? "", cvv: self.txtCVV.text ?? "", expDate: self.txtExpiryDate.text ?? "" , email: user.email!)
+                self.createOrder(data: movieData, user: user, date: selectedDate, theaterData: theaterData, seatNumber: value.description, bookingNumber: bookingID)
             }
         }else{
             Alert.shared.showAlert(message: error, completion:  nil)
@@ -109,7 +131,7 @@ class AddNewCardVC: UIViewController {
     func validation() -> String {
         if self.txtCardNumber.text?.trim() == "" {
             return "Please enter card number"
-        }else if self.txtCardNumber.text?.count != 12 {
+        }else if self.txtCardNumber.text?.count != 16 {
             return "Please enter valid card number"
         }else if self.txtCardName.text?.trim() == "" {
             return "Please enter card holder name"
@@ -133,18 +155,6 @@ class AddNewCardVC: UIViewController {
         self.setUpView()
         // Do any additional setup after loading the view.
     }
-    
-
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destination.
-        // Pass the selected object to the new view controller.
-    }
-    */
-
 }
 
 
@@ -211,7 +221,7 @@ extension AddNewCardVC : UITextFieldDelegate {
 
         //TxtMobileNumber allowed only Digits, - and maximum 12 Digits allowed
         if textField == txtCardNumber {
-            if ((string.rangeOfCharacter(from: CharacterSet.decimalDigits) != nil) && textField.text!.count < 12) || string.isEmpty{
+            if ((string.rangeOfCharacter(from: CharacterSet.decimalDigits) != nil) && textField.text!.count < 16) || string.isEmpty{
                 return true
             }
         }
@@ -251,4 +261,55 @@ extension AddNewCardVC : UITextFieldDelegate {
          }
          return false
       }
+}
+
+
+//MARK:- API
+extension AddNewCardVC {
+    func createOrder(data:MovieModel, user:UserModel,date:String,theaterData: TheaterModel,seatNumber:String,bookingNumber:String){
+        var ref : DocumentReference? = nil
+        ref = AppDelegate.shared.db.collection(eOrder).addDocument(data:
+            [
+                eMovieName : data.name.description,
+                eTheaterName : theaterData.name.description,
+                eEmail: user.email?.description,
+                eOrderDate : date,
+                eOrderAmount: data.price,
+                eSeatNumber: seatNumber,
+                eBookingNumber: bookingNumber
+            ])
+        {  err in
+            if let err = err {
+                print("Error adding document: \(err)")
+            } else {
+                print("Document added with ID: \(ref!.documentID)")
+                Alert.shared.showAlert(message: "Your ticket has been booked successfully !!!") { (true) in
+                    if let vc = UIStoryboard.main.instantiateViewController(withClass: SuccessMessageVC.self) {
+                        self.navigationController?.pushViewController(vc, animated: true)
+                    }
+                }
+            }
+        }
+    }
+
+    
+    func addCard(name:String,number:String,cvv:String,expDate:String,email:String){
+        var ref : DocumentReference? = nil
+        ref = AppDelegate.shared.db.collection(eCardList).addDocument(data:
+            [
+                eCardNumber: number,
+                eCardName : name,
+                eEmail: email,
+                eCardExpiryDate : expDate,
+                eCVV: cvv
+                
+            ])
+        {  err in
+            if let err = err {
+                print("Error adding document: \(err)")
+            } else {
+                print("Document added with ID: \(ref!.documentID)")
+            }
+        }
+    }
 }
